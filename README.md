@@ -3,7 +3,7 @@
 ## Task
 * Implement in async.c and async.h: ```void async_init(int num_threads)``` and ```void async_run(void (*handler)(int), int args)```
 * You can use list data structure in utlist.h, for example: ```DL_APPEND(my_queue->head, my_item);```(adding to queue end) and  ```DL_DELETE(my_queue->head, my_queue->head);```(popping from queue head)
-* When no jobs are coming, your threads created in ```async_init``` have to go to sleep and is not allowed to do busying waiting like ```while(1){sleep(any);}```, and when jobs are coming a sleeping thread in your thread pool **must** wake up immediately (that is, no ```sleep()``` call is allowed).
+* When no jobs are coming, your threads created in ```async_init``` have to go to sleep and is not allowed to do busy waiting like ```while(1){sleep(any);}```, and when jobs are coming a sleeping thread in your thread pool **must** wake up immediately (that is, no ```sleep()``` call is allowed).
 * async_run should be asynchronous without further call to pthread_create, that is it should return immediately before the job is handled (in the code we give you, async_run runs synchronously, so you need to rewrite the function)
 
 ## Test
