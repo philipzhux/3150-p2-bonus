@@ -25,11 +25,11 @@ void async_run(void (*handler)(int), int args) {
 
 void* async_handler(void *stub) {
     my_queue_t* wq = (my_queue_t*)stub;
+    handler_t handler;
+    int arg;
     pthread_detach(pthread_self());
-    while(1) {
-        handler_t handler;
-        int arg;
-        wq_pop(wq,&handler,&arg);
+    while(1) { // not busy waiting here
+        wq_pop(wq,&handler,&arg); // will block/sleep if work queue is empty
         handler(arg);
     }
     return NULL;
