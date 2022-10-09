@@ -1,7 +1,7 @@
 # THEAD POLL
 
 ## Task
-* Implement in async.c: ```void async_init(int num_threads)``` and ```void async_run(void (*handler)(int), int args)```
+* Implement in async.c and async.h: ```void async_init(int num_threads)``` and ```void async_run(void (*handler)(int), int args)```
 * You can use list data structure in utlist.h, for example: ```DL_APPEND(my_queue->head, my_item);```(adding to queue end) and  ```DL_DELETE(my_queue->head, my_queue->head);```(popping from queue head)
 * When no jobs are coming, your threads created in ```async_init``` have to go to sleep and is not allowed to do busying waiting like ```while(1){sleep(any);}```, and when jobs are coming the thread in your thread poll **must** wake up immediately (that is, no ```sleep()``` call is allowed).
 
