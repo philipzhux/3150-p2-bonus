@@ -9,4 +9,4 @@
 ## Test
 * ./httpserver --proxy inst.eecs.berkeley.edu:80 --port 8000 --num-threads 5
 * When you run the test, you can access 127.0.0.1:8000 at your browser even before modifying the code, but it cannot serve the request concurrently (multiple requests at the same time) and always serve with the same thread id. After implementing the thread pool you should support concurrent access.
-* Once you create num-threads of threads in ```async_init``` to initialize your program, you are not allowed to create any more thread in ```async_run```, otherwise zero score will be granted.
+* Once you create num-threads of threads in ```async_init``` to initialize your pool, you are not allowed to create any more thread in ```async_run```, otherwise zero score will be granted.
