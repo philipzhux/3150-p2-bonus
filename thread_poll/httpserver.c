@@ -296,7 +296,7 @@ void signal_callback_handler(int signum) {
 }
 
 char *USAGE =
-"Usage: ./httpserver --files www_directory/ --port 8000 [--num-threads 5]\n"
+"Usage: ./httpserver --files files/ --port 8000 [--num-threads 5]\n"
 "       ./httpserver --proxy inst.eecs.berkeley.edu:80 --port 8000 [--num-threads 5]\n";
 
 void exit_with_usage() {
