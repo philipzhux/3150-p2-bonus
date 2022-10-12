@@ -13,8 +13,6 @@ typedef struct my_item {
 typedef struct my_queue {
   int size;
   my_item_t *head;
-  pthread_mutex_t mutex;
-  pthread_cond_t cond;
   /* TODO: More stuff here, maybe? */
 } my_queue_t;
 
